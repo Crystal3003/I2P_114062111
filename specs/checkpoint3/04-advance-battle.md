@@ -2,7 +2,7 @@
 
 Score: 3 points
 
-- [ ] (1 points) Have a concept of element 
+- [ ] (2 points) Have a concept of element 
     - Some pokemon have their own elements (e.g. Water, Fire, Grass, ...)
     - For each element, they have their own strengths and weaknesses (e.g. Water is strong against Fire, Fire is strong against Grass, Grass is strong against Water)
     
