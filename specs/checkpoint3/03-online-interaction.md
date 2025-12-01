@@ -10,3 +10,10 @@ Example for rendering other players
 (HINT: Try to figure out how to change animation direction first. Then figure out how to render animation for online players)
 
 - [ ] (2 points) Player can battle with other players
+
+Guide to Run Online:
+Video guide: https://drive.google.com/file/d/1S3R6RD-XzZskEqNRjE9ytsM9qmjvTCth/view?usp=sharing
+
+1. Open a terminal and run python server.py
+2. Open two other terminals and run python main.py on each.
+3. Enjoy.
