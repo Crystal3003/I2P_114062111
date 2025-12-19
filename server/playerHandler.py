@@ -2,6 +2,10 @@ import threading
 import time
 from dataclasses import dataclass
 from typing import Dict
+<<<<<<< HEAD
+=======
+
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
 TIMEOUT_TIME = 60.0
 CHECK_INTERVAL_TIME = 10.0
 
@@ -20,18 +24,29 @@ class Player:
     y: float
     map: str
     last_update: float
+<<<<<<< HEAD
     direction: str
     moving: bool
     # HINT: This part might be helpful for direction change
     # Maybe you can add other parameters? 
     def update(self, x: float, y: float, map: str, direction: str, moving: bool) -> None:
+=======
+
+    # HINT: This part might be helpful for direction change
+    # Maybe you can add other parameters? 
+    def update(self, x: float, y: float, map: str) -> None:
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
         if x != self.x or y != self.y or map != self.map:
             self.last_update = time.monotonic()
         self.x = x
         self.y = y
         self.map = map
+<<<<<<< HEAD
         self.direction = direction
         self.moving = moving
+=======
+
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
     def is_inactive(self) -> bool:
         now = time.monotonic()
         return (now - self.last_update) >= TIMEOUT_TIME
@@ -84,7 +99,11 @@ class PlayerHandler:
             self._next_id += 1
             # HINT: This part might be helpful for direction change
             # Maybe you can add other parameters? 
+<<<<<<< HEAD
             self.players[pid] = Player(pid, 0.0, 0.0, "", time.monotonic(), "DOWN", False)
+=======
+            self.players[pid] = Player(pid, 0.0, 0.0, "", time.monotonic())
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
             return pid
 
     def unregister(self, pid: int) -> bool:
@@ -95,7 +114,11 @@ class PlayerHandler:
                 return True
             return False
 
+<<<<<<< HEAD
     def update(self, pid: int, x: float, y: float, map_name: str, direction: str, moving: bool) -> bool:
+=======
+    def update(self, pid: int, x: float, y: float, map_name: str) -> bool:
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
         with self._lock:
             p = self.players.get(pid)
             if not p:
@@ -103,7 +126,11 @@ class PlayerHandler:
             else:
                 # HINT: This part might be helpful for direction change
                 # Maybe you can add other parameters? 
+<<<<<<< HEAD
                 p.update(float(x), float(y), str(map_name), direction, moving)
+=======
+                p.update(float(x), float(y), str(map_name))
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b
                 return True
 
     def list_players(self) -> dict:
@@ -116,8 +143,14 @@ class PlayerHandler:
                     "id": p.id,
                     "x": p.x,
                     "y": p.y,
+<<<<<<< HEAD
                     "map": p.map,
                     "direction": p.direction,
                     "moving": p.moving
                 }
             return player_list
+=======
+                    "map": p.map
+                }
+            return player_list
+>>>>>>> 778521bd030d2e2b05e6ab04dd653258e473799b

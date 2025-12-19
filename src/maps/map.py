@@ -74,7 +74,6 @@ class Map:
         for layer in self.tmxdata.visible_layers:
             if isinstance(layer, pytmx.TiledTileLayer):
                 self._render_tile_layer(target, layer)
-
     def _render_tile_layer(self, target: pg.Surface, layer: pytmx.TiledTileLayer) -> None:
         for x, y, gid in layer:
             if gid == 0:
