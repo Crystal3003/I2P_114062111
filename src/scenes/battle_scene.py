@@ -131,6 +131,8 @@ class BattleScene(Scene):
             self.captured = True
             self.battle_over = True
             self.player_won = True
+            for r in self.rewards:
+                self.dm.add(f"Get {r.count} {r.name} from the battle!")
         else:
             self.dm.add(f"You missed it!") 
 
@@ -473,6 +475,8 @@ class BattleScene(Scene):
                 self.dm.add("You won the battle!")
                 self.battle_over = True
                 self.player_won = True
+                for r in self.rewards:
+                    self.dm.add(f"Get {r.count} {r.name} from the battle!")
                 return
             # bush monster try to escape
             elif self.battle_type == "bush" and self.can_capture:
@@ -526,5 +530,5 @@ class BattleScene(Scene):
             if self.player_won:
                 for reward in self.rewards:
                     self.game_manager.bag.change_item_amount(reward.id, "add", reward.count)
-                    Logger.info(f"Get {reward.count} {reward.name} from the battle")
+                    Logger.info(f"Get {reward.count} {reward.name}")
             scene_manager.change_scene("game")
