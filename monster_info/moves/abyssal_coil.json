@@ -1,0 +1,42 @@
+{
+    "id": "abyssal_coil",
+    "name": "Abyssal Coil",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "max_hp",
+            "value": 0.2
+        },
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "add",
+            "value": 50,
+            "chance": 0.25
+        },
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "add",
+            "value": 50,
+            "chance": 0.25
+        },
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "add",
+            "value": 50,
+            "chance": 0.25
+        },
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "add",
+            "value": 50,
+            "chance": 0.25
+        }
+    ]
+}

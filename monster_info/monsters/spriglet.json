@@ -1,0 +1,30 @@
+{
+  "id": "spriglet",
+  "name": "Spriglet",
+  "sprite": "menu_sprites/menusprite1.png",
+  "battle_sprite": "sprites/sprite1.png",
+  "element": "grass",
+  "flying": false,
+  "evolution": {
+    "next": "verdelion",
+    "method": "level",
+    "value": 21
+  },
+
+  "base_stats": {
+    "hp": 15,
+    "attack": 3,
+    "defense": 1,
+    "speed": 25
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 1,  "move": "root_tackle" },
+      { "level": 5,  "move": "leaf_snap" },
+      { "level": 12, "move": "bud_guard" },
+      { "level": 17, "move": "pollen_puff"}
+    ],
+    "default": ["leaf_snap"]
+  }
+}

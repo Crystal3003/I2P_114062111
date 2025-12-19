@@ -1,0 +1,30 @@
+{
+    "id": "blackout_coil",
+    "name": "Blackout Coil",
+    "ec": 12,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "target": "self",
+            "method": "multiply",
+            "value": 1.5,
+            "duration": 2
+        },
+        {
+            "type": "apply_status",
+            "id": "vulnerable",
+            "duration": 2,
+            "target": "enemy"
+        },
+        {
+            "type": "apply_effect",
+            "target": "enemy",
+            "id": "defense_down",
+            "method": "add",
+            "value": 50,
+            "duration": 2
+        }
+    ]
+}

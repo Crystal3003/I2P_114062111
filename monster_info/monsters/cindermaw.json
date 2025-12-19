@@ -1,0 +1,26 @@
+{
+  "id": "cindermaw",
+  "name": "Cindermaw",
+  "sprite": "menu_sprites/menusprite9.png",
+  "battle_sprite": "sprites/sprite9.png",
+  "element": "fire",
+  "flying": false,
+  "evolution": null,
+
+  "base_stats": {
+    "hp": 458,
+    "attack": 261,
+    "defense": 131,
+    "speed": 30
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 65,  "move": "ash_devour" },
+      { "level": 72,  "move": "inferno_rempage"},
+      { "level": 80, "move": "volcanic_carapace" },
+      { "level": 89, "move": "cataclysm_breath"}
+    ],
+    "default": ["ash_devour"]
+  }
+}

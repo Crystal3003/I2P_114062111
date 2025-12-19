@@ -1,0 +1,22 @@
+{
+    "id": "current_shift",
+    "name": "Current Shift",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "apply_status",
+            "id": "invincible",
+            "target": "self",
+            "duration": 1
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "target": "self",
+            "method": "multiply",
+            "value": 1.5,
+            "duration": 1
+        }
+    ]
+}

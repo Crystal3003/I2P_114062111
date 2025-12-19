@@ -1,0 +1,14 @@
+{
+    "id": "leaf_snap",
+    "name": "Leaf Snap",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.0
+        }
+    ]
+}

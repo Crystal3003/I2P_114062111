@@ -1,0 +1,14 @@
+{
+    "id": "regrowth",
+    "name": "Regrowth",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "lost_hp",
+            "value": 0.4
+        }
+    ]
+}

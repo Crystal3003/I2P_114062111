@@ -1,0 +1,22 @@
+{
+    "id": "pollen_shot",
+    "name": "Pollen Shot",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.0
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "method": "add",
+            "value": 15,
+            "duration": 2,
+            "target": "enemy"
+        }
+    ]
+}

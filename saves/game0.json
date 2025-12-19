@@ -1,0 +1,384 @@
+{
+  "map": [
+    {
+      "path": "map.tmx",
+      "teleport": [
+        {
+          "x": 24.0,
+          "y": 22.5,
+          "destination": "gym.tmx",
+          "dest_x": 12.0,
+          "dest_y": 12.0
+        },
+        {
+          "x": 46.0,
+          "y": 27.5,
+          "destination": "hospital.tmx",
+          "dest_x": 15.0,
+          "dest_y": 18.0
+        }
+      ],
+      "player": {
+        "x": 16,
+        "y": 30
+      },
+      "enemy_trainers": [
+        {
+          "x": 24.0,
+          "y": 29.0,
+          "anim": "character/ow2.png",
+          "classification": "stationary",
+          "facing": "DOWN",
+          "max_tiles": 2,
+          "monsters": [
+            {
+              "id": "spriglet",
+              "hp": 15,
+              "max_hp": 15,
+              "defense": 1,
+              "attack": 3,
+              "level": 1,
+              "skill_set": [
+                "root_tackle"
+              ]
+            },
+            {
+              "id": "dripfin",
+              "hp": 20,
+              "max_hp": 20,
+              "defense": 0,
+              "attack": 2,
+              "level": 1,
+              "skill_set": [
+                "water_flick"
+              ]
+            }
+          ]
+        },
+        {
+          "x": 54.0,
+          "y": 16.0,
+          "anim": "character/ow3.png",
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "monsters": [
+            {
+              "id": "embit",
+              "hp": 10,
+              "max_hp": 10,
+              "defense": 2,
+              "attack": 5,
+              "level": 1,
+              "skill_set": [
+                "ember_claw"
+              ]
+            }
+          ]
+        },
+        {
+          "x": 31.0,
+          "y": 31.0,
+          "anim": "character/ow4.png",
+          "classification": "stationary",
+          "facing": "UP",
+          "max_tiles": 2,
+          "monsters": [
+            {
+              "id": "embit",
+              "hp": 10,
+              "max_hp": 10,
+              "defense": 2,
+              "attack": 5,
+              "level": 1,
+              "skill_set": [
+                "ember_claw",
+                "heat_peck",
+                "smolder_hide",
+                "flame_pulse"
+              ]
+            }
+          ]
+        }
+      ],
+      "shops": [
+        {
+          "x": 16.0,
+          "y": 32.0,
+          "anim": "character/ow5.png",
+          "facing": "UP",
+          "max_tiles": 2,
+          "trade_table": {
+            "buy": [
+              {
+                "item": {
+                  "id": "spriglet",
+                  "hp": 15,
+                  "max_hp": 15,
+                  "attack": 3,
+                  "defense": 2,
+                  "level": 1,
+                  "skill_set": [
+                    "root_tackle"
+                  ]
+                },
+                "price": 200
+              },
+              {
+                "item": {
+                  "id": "strength_potion",
+                  "count": 1
+                },
+                "price": 50
+              },
+              {
+                "item": {
+                  "id": "defense_potion",
+                  "count": 1
+                },
+                "price": 40
+              },
+              {
+                "item": {
+                  "id": "pokeball",
+                  "count": 1
+                },
+                "price": 30
+              },
+              {
+                "item": {
+                  "id": "pokeball",
+                  "count": 2
+                },
+                "price": 50
+              },
+              {
+                "item": {
+                  "id": "pokeball",
+                  "count": 3
+                },
+                "price": 70
+              }
+            ],
+            "sell": [
+              {
+                "item": {
+                  "id": "health_potion",
+                  "count": 1
+                },
+                "price": 20
+              }
+            ],
+            "sell_pokemons": {
+              "enabled": "True",
+              "price": 100
+            }
+          }
+        }
+      ],
+      "navigate_points": [
+        {
+          "x": 24,
+          "y": 23,
+          "name": "Gym"
+        },
+        {
+          "x": 47,
+          "y": 28,
+          "name": "Hospital"
+        },
+        {
+          "x": 16,
+          "y": 32,
+          "name": "shop"
+        }
+      ]
+    },
+    {
+      "path": "gym.tmx",
+      "teleport": [
+        {
+          "x": 11.0,
+          "y": 14.0,
+          "destination": "map.tmx",
+          "dest_x": 24.0,
+          "dest_y": 24.0
+        },
+        {
+          "x": 12.0,
+          "y": 14.0,
+          "destination": "map.tmx",
+          "dest_x": 24.0,
+          "dest_y": 24.0
+        },
+        {
+          "x": 13.0,
+          "y": 14.0,
+          "destination": "map.tmx",
+          "dest_x": 24.0,
+          "dest_y": 24.0
+        }
+      ],
+      "player": {
+        "x": 12,
+        "y": 12
+      },
+      "enemy_trainers": [],
+      "shops": [],
+      "navigate_points": []
+    },
+    {
+      "path": "hospital.tmx",
+      "teleport": [
+        {
+          "x": 13.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 28.0
+        },
+        {
+          "x": 14.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        },
+        {
+          "x": 15.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        },
+        {
+          "x": 16.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        },
+        {
+          "x": 17.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        }
+      ],
+      "player": {
+        "x": 15,
+        "y": 18
+      },
+      "enemy_trainers": [],
+      "shops": [],
+      "navigate_points": []
+    }
+  ],
+  "current_map": "map.tmx",
+  "player": {
+    "x": 23.359375,
+    "y": 30.9375,
+    "anim": "character/ow1.png"
+  },
+  "bag": {
+    "monsters": [
+      {
+        "id": "spriglet",
+        "hp": 15,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle"
+        ]
+      },
+      {
+        "id": "embit",
+        "hp": 10,
+        "max_hp": 10,
+        "defense": 2,
+        "attack": 5,
+        "level": 1,
+        "skill_set": [
+          "ember_claw"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 0,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 0,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 15,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 15,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 15,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "health_potion",
+        "count": 6
+      },
+      {
+        "id": "coins",
+        "count": 869
+      },
+      {
+        "id": "pokeball",
+        "count": 11
+      }
+    ]
+  }
+}

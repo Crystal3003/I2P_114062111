@@ -1,0 +1,24 @@
+{
+    "id": "inferno_rempage",
+    "name": "Inferno Rempage",
+    "ec": 3,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "method": "add",
+            "value": 100,
+            "duration": 2,
+            "target": "self"
+        },
+        {
+            "type": "apply_effect",
+            "id": "speed_up",
+            "method": "add",
+            "value": 10,
+            "duration": 2,
+            "target": "self"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "id": "flame_pulse",
+    "name": "Flame Pulse",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "fire",
+            "power": 1.2
+        },
+        {
+            "type": "apply_status",
+            "id": "on_fire",
+            "target": "enemy",
+            "duration": 2
+        }
+    ]
+}

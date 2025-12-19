@@ -1,0 +1,28 @@
+{
+    "id": "oceans_edict",
+    "name": "Ocean's Edict",
+    "ec": 8,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 1.5
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_down",
+            "target": "enemy",
+            "duration": 2,
+            "method": "multiply",
+            "value": 0.75
+        },
+        {
+            "type": "apply_status",
+            "id": "vulnerable",
+            "duration": 2,
+            "target": "enemy"
+        }
+    ]
+}

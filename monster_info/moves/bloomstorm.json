@@ -1,0 +1,32 @@
+{
+    "id": "bloomstorm",
+    "name": "Bloomstorm",
+    "ec": 8,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.8
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.8
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.8
+        },
+        {
+            "type": "apply_status",
+            "id": "vulnerable",
+            "target": "enemy",
+            "duration": 3
+        }
+    ]
+}

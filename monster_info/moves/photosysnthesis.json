@@ -1,0 +1,20 @@
+{
+    "id": "photosynthesis",
+    "name": "Photosynthesis",
+    "ec": 5,
+    
+    "effects":[
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "lost_hp",
+            "value": 0.5
+        },
+        {
+            "type": "apply_status",
+            "id": "regen",
+            "target": "self",
+            "duration": 2
+        }
+    ]
+}

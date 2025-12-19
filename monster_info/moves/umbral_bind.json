@@ -1,0 +1,23 @@
+{
+    "id": "umbral_bind",
+    "name": "Umbral Bind",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "dark",
+            "power": 1.1
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "target": "enemy",
+            "method": "multiply",
+            "value": 0.75,
+            "duration": 2,
+            "chance": 0.25
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "id": "night_stalk",
+    "name": "Night Stalk",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_status",
+            "id": "regen",
+            "target": "self",
+            "duration": 2
+        }
+    ]
+}

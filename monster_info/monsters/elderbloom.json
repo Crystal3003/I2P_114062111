@@ -1,0 +1,26 @@
+{
+  "id": "enderbloom",
+  "name": "Elderbloom",
+  "sprite": "menu_sprites/menusprite3.png",
+  "battle_sprite": "sprites/sprite3.png",
+  "element": "grass",
+  "flying": false,
+  "evolution": null,
+
+  "base_stats": {
+    "hp": 407,
+    "attack": 227,
+    "defense": 113,
+    "speed": 35
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 57,  "move": "ancient_vine" },
+      { "level": 64,  "move": "briar_dominion" },
+      { "level": 71, "move": "natures_resurgence" },
+      { "level": 52, "move": "blooming_judgment"}
+    ],
+    "default": ["ancient_vine"]
+  }
+}

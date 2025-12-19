@@ -1,0 +1,26 @@
+{
+    "id": "eclipse_fang",
+    "name": "Eclipse Fang",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "dark",
+            "power": 1.0
+        },
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "lost_hp",
+            "value": 0.6
+        },
+        {
+            "type": "apply_status",
+            "id": "bleed",
+            "target": "enemy",
+            "duration": 2
+        }
+    ]
+}

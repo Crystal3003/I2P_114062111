@@ -1,0 +1,20 @@
+{
+    "id": "venom_of_dread",
+    "name": "Venom of Dread",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "dark",
+            "power": 1.0
+        },
+        {
+            "type": "apply_status",
+            "id": "poison",
+            "target": "enemy",
+            "duration": 1
+        }
+    ]
+}

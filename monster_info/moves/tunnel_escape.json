@@ -1,0 +1,19 @@
+{
+    "id": "tunnel_escape",
+    "name": "Tunnel Escape",
+    "ec": 12,
+    
+    "effects":[
+        {
+            "type": "special",
+            "id": "tunnel_escape",
+            "target": "self"
+        },
+        {
+            "type": "special",
+            "id": "additional_energy",
+            "target": "self",
+            "value": 3
+        }
+    ]
+}

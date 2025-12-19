@@ -1,0 +1,20 @@
+{
+    "id": "shadow_scratch",
+    "name": "Shadow Scratch",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "dark",
+            "power": 1.0
+        },
+        {
+            "type": "attack",
+            "target":"enemy",
+            "element": "neutral",
+            "power": 0.5
+        }
+    ]
+}

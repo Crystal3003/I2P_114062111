@@ -1,0 +1,14 @@
+{
+    "id": "root_tackle",
+    "name": "Root Tackle",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.0
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "id": "ember_claw",
+    "name": "Ember Claw",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.0
+        }
+    ]
+}

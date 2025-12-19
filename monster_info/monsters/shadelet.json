@@ -1,0 +1,30 @@
+{
+  "id": "shadelet",
+  "name": "Shadelet",
+  "sprite": "menu_sprites/menusprite10.png",
+  "battle_sprite": "sprites/sprite10.png",
+  "element": "dark",
+  "flying": false,
+  "evolution": {
+    "next": "noctyrr",
+    "method": "level",
+    "value": 51
+  },
+
+  "base_stats": {
+    "hp": 12,
+    "attack": 6,
+    "defense": 3,
+    "speed": 45
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 1,  "move": "shadow_scratch" },
+      { "level": 14,  "move": "night_stalk" },
+      { "level": 26, "move": "dusk_blink" },
+      { "level": 39, "move": "fear_purr"}
+    ],
+    "default": ["shadow_scratch"]
+  }
+}

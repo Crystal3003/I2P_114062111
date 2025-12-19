@@ -1,0 +1,14 @@
+{
+    "id": "tidal_slash",
+    "name": "Tidal Slash",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 1.1
+        }
+    ]
+}

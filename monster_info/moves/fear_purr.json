@@ -1,0 +1,24 @@
+{
+    "id": "fear_purr",
+    "name": "Fear Purr",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "method": "multiply",
+            "value": 0.5,
+            "duration": 1,
+            "target": "self"
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "method": "multiply",
+            "target": "self",
+            "value": 2.0,
+            "duration": 1
+        }
+    ]
+}

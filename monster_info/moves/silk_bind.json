@@ -1,0 +1,16 @@
+{
+    "id": "silk_bind",
+    "name": "Silk Bind",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "speed_down",
+            "target": "enemy",
+            "duration": 3,
+            "method": "multiply",
+            "value": 0.25
+        }
+    ]
+}

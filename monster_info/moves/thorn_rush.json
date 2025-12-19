@@ -1,0 +1,14 @@
+{
+    "id": "thorn_rush",
+    "name": "Thorn Rush",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.05
+        }
+    ]
+}

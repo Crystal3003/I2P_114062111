@@ -1,0 +1,27 @@
+{
+  "id": "skydrift",
+  "name": "Skydrift",
+  "sprite": "menu_sprites/menusprite5.png",
+  "battle_sprite": "sprites/sprite5.png",
+  "element": "neutral",
+  "flying": true,
+  "evolution": null,
+
+  "base_stats": {
+    "hp": 10,
+    "attack": 7,
+    "defense": 3,
+    "speed": 40
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 1,  "move": "peck_flurry" },
+      { "level": 13,  "move": "wind_hop" },
+      { "level": 34, "move": "air_slip" },
+      { "level": 49, "move": "feather_screen"},
+      { "level": 60, "move": "sky_dart"}
+    ],
+    "default": ["peck_flurry"]
+  }
+}

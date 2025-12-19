@@ -1,0 +1,19 @@
+{
+    "id": "sanctify",
+    "name": "Sanctify",
+    "ec": 4,
+    
+    "effects":[
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "max_hp",
+            "value": 0.3
+        },
+        {
+            "type": "special",
+            "id": "purify",
+            "target": "self"
+        }
+    ]
+}

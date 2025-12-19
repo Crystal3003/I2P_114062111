@@ -1,0 +1,22 @@
+{
+    "id": "volcanic_carapace",
+    "name": "Volcanic Carapace",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "defense_up",
+            "method": "add",
+            "value": 75,
+            "duration": 1,
+            "target": "self"
+        },
+        {
+            "type": "apply_status",
+            "id": "thorn",
+            "duration": 1,
+            "target": "self"
+        }
+    ]
+}

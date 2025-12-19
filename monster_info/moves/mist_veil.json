@@ -1,0 +1,24 @@
+{
+    "id": "mist_veil",
+    "name": "Mist Veil",
+    "ec": 5,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "speed_down",
+            "method": "add",
+            "value": 10,
+            "duration": 3,
+            "target": "enemy"
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_down",
+            "method": "multiply",
+            "value": 0.75,
+            "duration": 3,
+            "target": "enemy"
+        }
+    ]
+}

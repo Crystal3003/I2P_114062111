@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["id", "name", "ec", "effects"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique skill id"
+    },
+    "name": {
+      "type": "string"
+    },
+    "ec": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "effects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/effect"
+      }
+    }
+  },
+  "definitions": {
+    "effect": {
+        "oneOf": [
+            {
+            "type": "object",
+            "required": ["type", "target", "element", "power"],
+            "properties": {
+                "type": { "const": "attack" },
+                "target": { "enum": ["self", "enemy"] },
+                "element": {
+                "enum": ["grass", "fire", "water", "dark", "divine", "neutral"]
+                },
+                "power": {
+                "type": "number",
+                "minimum": 0
+                },
+                "chance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+                }
+            },
+            "additionalProperties": false
+            },
+
+            {
+            "type": "object",
+            "required": ["type", "target", "method", "value"],
+            "properties": {
+                "type": { "const": "heal" },
+                "target": { "enum": ["self", "enemy"] },
+                "method": {
+                "enum": ["add", "lost_hp", "max_hp"]
+                },
+                "value": {
+                "type": "number",
+                "minimum": 0
+                },
+                "chance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+                }
+            },
+            "additionalProperties": false
+            },
+            
+            {
+            "type": "object",
+            "required": ["type", "id", "target", "method", "value", "duration"],
+            "properties": {
+                "type": { "const": "apply_effect" },
+                "target": { "enum": ["self", "enemy"] },
+                "id": {
+                    "enum": ["attack_up", "attack_down", "defense_up", "defense_down", "speed_up", "speed_down"]
+                },
+                "method": {
+                "enum": ["add", "multiply"]
+                },
+                "value": {
+                "type": "number",
+                "minimum": 0
+                },
+                "duration":{
+                    "type": "number",
+                    "minimum": 1
+                },
+                "chance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+                }
+            },
+            "additionalProperties": false
+            },
+
+            {
+            "type": "object",
+            "required": ["type", "id", "target", "duration"],
+            "properties": {
+                "type": { "const": "apply_status" },
+                "target": { "enum": ["self", "enemy"] },
+                "id": {
+                    "enum": ["bleed", "regen", "on_fire", "thorn", "invincible", 
+                    "vulnerable", "poison", "stun", "sleep"]
+                },
+                "duration":{
+                    "type":"number",
+                    "minimum": 1
+                },
+                "chance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+                }
+            },
+            "additionalProperties": false
+            },
+
+            {
+            "type": "object",
+            "required": ["type", "id", "target"],
+            "properties": {
+                "type": { "const": "special" },
+                "id": {
+                    "enum": ["additional_energy", "eliminate_dark", "purify", "tunnel_escape"]
+                },
+                "chance": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+                },
+                "value":{
+                    "type": "number",
+                    "description": "for additional_energy"
+                },
+                "target":{
+                  "type": "string",
+                  "enum": ["self", "enemy"]
+                }
+            },
+            "additionalProperties": false
+            }
+        ]
+    }
+
+    }
+
+}

@@ -1,0 +1,30 @@
+{
+  "id": "verdelion",
+  "name": "Verdelion",
+  "sprite": "menu_sprites/menusprite2.png",
+  "battle_sprite": "sprites/sprite2.png",
+  "element": "grass",
+  "flying": false,
+  "evolution": {
+    "next": "elderbloom",
+    "method": "level",
+    "value": 57
+  },
+
+  "base_stats": {
+    "hp": 155,
+    "attack": 83,
+    "defense": 41,
+    "speed": 30
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 21,  "move": "vine_whip" },
+      { "level": 29,  "move": "thorn_rush" },
+      { "level": 40, "move": "regrowth" },
+      { "level": 52, "move": "verdant_roar"}
+    ],
+    "default": ["vine_whip"]
+  }
+}

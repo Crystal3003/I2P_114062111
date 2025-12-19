@@ -1,0 +1,16 @@
+{
+    "id": "air_slip",
+    "name": "Air Slip",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "speed_up",
+            "target": "self",
+            "method": "add",
+            "value": 15,
+            "duration": 1
+        }
+    ]
+}

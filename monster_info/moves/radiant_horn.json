@@ -1,0 +1,20 @@
+{
+    "id": "radiant_horn",
+    "name": "Radiant Horn",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "divine",
+            "power": 1.0
+        },
+        {
+            "type": "special",
+            "id": "additional_energy",
+            "target": "self",
+            "value": 2
+        }
+    ]
+}

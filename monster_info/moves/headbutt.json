@@ -1,0 +1,21 @@
+{
+    "id": "headbutt",
+    "name": "Headbutt",
+    "ec": 3,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.5
+        },
+        {
+            "type": "apply_status",
+            "id": "stun",
+            "duration": 1,
+            "target": "enemy",
+            "chance": 0.2
+        }
+    ]
+}

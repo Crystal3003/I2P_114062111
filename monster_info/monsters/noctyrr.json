@@ -1,0 +1,26 @@
+{
+  "id": "noctyrr",
+  "name": "Noctyrr",
+  "sprite": "menu_sprites/menusprite11.png",
+  "battle_sprite": "sprites/sprite11.png",
+  "element": "dark",
+  "flying": false,
+  "evolution": null,
+
+  "base_stats": {
+    "hp": 362,
+    "attack": 206,
+    "defense": 103,
+    "speed": 50
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 51,  "move": "unbral_bind" },
+      { "level": 62,  "move": "venom_of_dread" },
+      { "level": 77, "move": "eclipse_fang" },
+      { "level": 90, "move": "blackout_coil"}
+    ],
+    "default": ["unbral_bind"]
+  }
+}

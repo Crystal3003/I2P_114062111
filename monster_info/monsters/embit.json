@@ -1,0 +1,30 @@
+{
+  "id": "embit",
+  "name": "Embit",
+  "sprite": "menu_sprites/menusprite7.png",
+  "battle_sprite": "sprites/sprite7.png",
+  "element": "fire",
+  "flying": false,
+  "evolution": {
+    "next": "pyronox",
+    "method": "level",
+    "value": 24
+  },
+
+  "base_stats": {
+    "hp": 10,
+    "attack": 5,
+    "defense": 2,
+    "speed": 20
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 1,  "move": "ember_claw" },
+      { "level": 7,  "move": "heat_peck" },
+      { "level": 13, "move": "smolder_hide" },
+      { "level": 20, "move": "flame_pulse"}
+    ],
+    "default": ["ember_claw"]
+  }
+}

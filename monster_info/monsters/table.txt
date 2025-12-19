@@ -1,0 +1,28 @@
+Grass (Lion):
+Spriglet → Verdelion → Elderbloom
+
+Fire (Armored Dragon):
+Embit → Pyronox → Cindermaw
+
+Water (Jiaolong):
+Dripfin → Waveclaw → Abyssryn
+
+Dark (Cat → Snake):
+Shadepaw → Noctyrr
+
+Holy (Deer):
+Luminaryx
+
+Neutral (Mole):
+Burrowl
+
+Neutral (Flying Sparrow):
+Skydrift
+
+Grass (Flying Moth):
+Petalwing → Floravian
+
+hp +7 +- 3 / level
+atk +4 +- 2 / level
+speed won't change
+def +2 +- 1

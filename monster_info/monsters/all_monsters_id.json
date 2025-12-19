@@ -1,0 +1,30 @@
+{
+    "all":[
+        "abyssryn",
+        "burrowl",
+        "cindermaw",
+        "dripfin",
+        "elderbloom",
+        "embit",
+        "floravian",
+        "leafgrub",
+        "luminaryx",
+        "noctyrr",
+        "pyronox",
+        "shadelet",
+        "skydrift",
+        "spriglet",
+        "verdelion",
+        "waveclaw"
+    ],
+    "stage_1":[
+        "burrowl",
+        "dripfin",
+        "embit",
+        "leafgrub",
+        "luminaryx",
+        "shadelet",
+        "skydrift",
+        "spriglet"
+    ]
+}

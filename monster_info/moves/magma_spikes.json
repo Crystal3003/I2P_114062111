@@ -1,0 +1,20 @@
+{
+    "id": "magma_spikes",
+    "name": "Megma Spikes",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "fire",
+            "power": 1.0
+        },
+        {
+            "type": "attack",
+            "element": "neutral",
+            "power": 0.2,
+            "target": "enemy"
+        }
+    ]
+}

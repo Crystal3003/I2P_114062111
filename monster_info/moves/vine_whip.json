@@ -1,0 +1,14 @@
+{
+    "id": "vine_whip",
+    "name": "Vine Whip",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.05
+        }
+    ]
+}

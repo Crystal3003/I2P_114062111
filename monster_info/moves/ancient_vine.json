@@ -1,0 +1,20 @@
+{
+    "id": "ancient_vine",
+    "name": "Ancient Vine",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.0
+        },
+        {
+            "type": "attack",
+            "target":"enemy",
+            "element": "neutral",
+            "power": 0.2
+        }
+    ]
+}

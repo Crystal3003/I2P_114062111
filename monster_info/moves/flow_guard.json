@@ -1,0 +1,16 @@
+{
+    "id": "flow_guard",
+    "name": "Flow Guard",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "defense_up",
+            "method": "add",
+            "value": 15,
+            "duration": 1,
+            "target": "self"
+        }
+    ]
+}

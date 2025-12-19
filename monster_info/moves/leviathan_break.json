@@ -1,0 +1,22 @@
+{
+    "id": "leviathan_break",
+    "name": "Leviathan Break",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.2
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "duration": 2,
+            "method": "multiply",
+            "value": 0.5,
+            "target": "enemy"
+        }
+    ]
+}

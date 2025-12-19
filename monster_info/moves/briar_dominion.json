@@ -1,0 +1,21 @@
+{
+    "id": "briar_dominion",
+    "name": "Briar Dominion",
+    "ec": 3,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.0
+        },
+        {
+            "type": "apply_status",
+            "id": "bleed",
+            "target": "enemy",
+            "duration": 1,
+            "chance": 0.75
+        }
+    ]
+}

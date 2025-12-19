@@ -1,0 +1,14 @@
+{
+    "id": "heat_peck",
+    "name": "Heat Peck",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "fire",
+            "power": 1.0
+        }
+    ]
+}

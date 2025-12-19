@@ -1,0 +1,44 @@
+{
+    "id": "blooming_judgment",
+    "name": "Blooming Judgment",
+    "ec": 10,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.75
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.75
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_down",
+            "target": "enemy",
+            "method": "multiply",
+            "value": 0.8,
+            "duration": 3
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "target": "enemy",
+            "method": "multiply",
+            "value": 0.8,
+            "duration": 3
+        },
+        {
+            "type": "apply_effect",
+            "id": "speed_down",
+            "target": "enemy",
+            "method": "add",
+            "value": 15,
+            "duration": 3
+        }
+    ]
+}

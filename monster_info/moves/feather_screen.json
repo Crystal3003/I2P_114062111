@@ -1,0 +1,35 @@
+{
+    "id": "feather_screen",
+    "name": "Feather Screen",
+    "ec": 5,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.6
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.6,
+            "chance": 0.5
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.6,
+            "chance": 0.5
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.6,
+            "chance": 0.5
+        }
+    ]
+}

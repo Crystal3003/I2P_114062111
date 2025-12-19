@@ -1,0 +1,28 @@
+{
+    "id": "verdant_cyclone",
+    "name": "Verdant Cyclone",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.8
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.7,
+            "chance": 0.6
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 0.7,
+            "chance": 0.6
+        }
+    ]
+}

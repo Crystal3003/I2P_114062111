@@ -1,0 +1,14 @@
+{
+    "id": "wind_hop",
+    "name": "Wind Hop",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "lost_hp",
+            "value": 0.5
+        }
+    ]
+}

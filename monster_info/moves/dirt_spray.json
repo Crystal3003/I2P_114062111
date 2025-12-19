@@ -1,0 +1,22 @@
+{
+    "id": "dirt_spray",
+    "name": "Dirt Spray",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.0
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "target": "enemy",
+            "method": "add",
+            "value": 20,
+            "duration": 2
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "id": "dusk_blink",
+    "name": "Dusk Blink",
+    "ec": 3,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "speed_up",
+            "method": "add",
+            "value": 15,
+            "duration": 1,
+            "target": "self"
+        }
+    ]
+}

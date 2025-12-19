@@ -1,0 +1,22 @@
+{
+    "id": "pollen_puff",
+    "name": "Pollen Puff",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "grass",
+            "power": 1.2
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_down",
+            "target": "enemy",
+            "method": "multiply",
+            "value": 0.8,
+            "duration": 2
+        }
+    ]
+}

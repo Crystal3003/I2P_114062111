@@ -1,0 +1,22 @@
+{
+    "id": "beacon_of_hope",
+    "name": "Beacon of Hope",
+    "ec": 6,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "divine",
+            "power": 1.2
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "target": "self",
+            "method": "multiply",
+            "value": 1.5,
+            "duration": 4
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "id": "water_flick",
+    "name": "Water Flick",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 1.0
+        }
+    ]
+}

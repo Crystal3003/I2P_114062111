@@ -1,0 +1,22 @@
+{
+    "id": "smolder_hide",
+    "name": "Smolde Hide",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "defense_up",
+            "target": "self",
+            "method": "add",
+            "value": 7,
+            "duration": 1
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "fire",
+            "power": 0.5
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "pyronox",
+  "name": "Pyronox",
+  "sprite": "menu_sprites/menusprite8.png",
+  "battle_sprite": "sprites/sprite8.png",
+  "element": "fire",
+  "flying": false,
+  "evolution": {
+    "next": "cindermaw",
+    "method": "level",
+    "value": 65
+  },
+
+  "base_stats": {
+    "hp": 171,
+    "attack": 97,
+    "defense": 49,
+    "speed": 25
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 24,  "move": "scorch_charch" },
+      { "level": 32,  "move": "magma_spikes" },
+      { "level": 46, "move": "heat_guard" },
+      { "level": 57, "move": "furnace_roar"}
+    ],
+    "default": ["scorch_charch"]
+  }
+}

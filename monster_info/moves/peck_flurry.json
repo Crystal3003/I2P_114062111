@@ -1,0 +1,20 @@
+{
+    "id": "peck_flurry",
+    "name": "Peck Flurry",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.7
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.7
+        }
+    ]
+}

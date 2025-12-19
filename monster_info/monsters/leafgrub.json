@@ -1,0 +1,30 @@
+{
+  "id": "leafgrub",
+  "name": "Leafgrub",
+  "sprite": "menu_sprites/menusprite15.png",
+  "battle_sprite": "sprites/sprite15.png",
+  "element": "grass",
+  "flying": false,
+  "evolution": {
+    "next": "floravian",
+    "method": "level",
+    "value": 42
+  },
+
+  "base_stats": {
+    "hp": 6,
+    "attack": 4,
+    "defense": 4,
+    "speed": 30
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 1,  "move": "leaf_nibble" },
+      { "level": 10,  "move": "pollen_shot" },
+      { "level": 22, "move": "sleep_spores" },
+      { "level": 34, "move": "silk_bind"}
+    ],
+    "default": ["leaf_nibble"]
+  }
+}

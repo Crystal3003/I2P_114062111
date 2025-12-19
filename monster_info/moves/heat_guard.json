@@ -1,0 +1,16 @@
+{
+    "id": "heat_guard",
+    "name": "Heat Guard",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "target": "self",
+            "id": "defense_up",
+            "duration": 1,
+            "method": "multiply",
+            "value": 1.1
+        }
+    ]
+}

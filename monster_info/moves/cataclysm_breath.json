@@ -1,0 +1,28 @@
+{
+    "id": "cataclysm_breath",
+    "name": "Cataclysm Breath",
+    "ec": 12,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "element": "fire",
+            "power": 1.5,
+            "target": "enemy"
+        },
+        {
+            "type": "apply_status",
+            "id": "on_fire",
+            "duration": 2,
+            "target": "enemy"
+        },
+        {
+            "type": "apply_effect",
+            "id": "defense_down",
+            "method": "multiply",
+            "value": 0.5,
+            "duration": 2,
+            "target": "enemy"
+        }
+    ]
+}

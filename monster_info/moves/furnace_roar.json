@@ -1,0 +1,20 @@
+{
+    "id": "furnace_roar",
+    "name": "Furnace Raor",
+    "ec": 8,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "element": "fire",
+            "power": 1.25,
+            "target": "enemy"
+        },
+        {
+            "type": "apply_status",
+            "id": "on_fire",
+            "target": "enemy",
+            "duration": 2 
+        }
+    ]
+}

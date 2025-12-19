@@ -1,0 +1,22 @@
+{
+    "id": "pressure_crush",
+    "name": "Pressure Crush",
+    "ec": 3,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 1.2
+        },
+        {
+            "type": "apply_effect",
+            "id": "speed_down",
+            "duration": 2,
+            "method": "add",
+            "value": 10,
+            "target": "enemy"
+        }
+    ]
+}

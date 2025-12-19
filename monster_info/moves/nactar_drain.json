@@ -1,0 +1,20 @@
+{
+    "id": "nectar_drain",
+    "name": "Nectar Drain",
+    "ec": 4,
+    
+    "effects":[
+        {
+            "type": "apply_status",
+            "id": "regen",
+            "target": "self",
+            "duration": 2
+        },
+        {
+            "type": "apply_status",
+            "id": "poison",
+            "target": "enemy",
+            "duration": 2
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "id": "ash_devour",
+    "name": "Ash Devour",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "fire",
+            "power": 0.75
+        },
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "chance": 0.5,
+            "method": "multiply",
+            "value": 1.5,
+            "duration": 1,
+            "target": "self"
+        },
+        {
+            "type": "heal",
+            "chance": 0.25,
+            "method": "add",
+            "value": 50,
+            "target": "self"
+        }
+    ]
+}

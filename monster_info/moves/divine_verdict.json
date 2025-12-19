@@ -1,0 +1,19 @@
+{
+    "id": "divine_verdict",
+    "name": "Divine Verdict",
+    "ec": 15,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "divine",
+            "power": 2.0
+        },
+        {
+            "type": "special",
+            "id": "eliminate_dark",
+            "target": "enemy"
+        }
+    ]
+}

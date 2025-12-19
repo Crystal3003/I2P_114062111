@@ -1,0 +1,26 @@
+{
+  "id": "abyssryn",
+  "name": "Abyssryn",
+  "sprite": "menu_sprites/menusprite14.png",
+  "battle_sprite": "sprites/sprite14.png",
+  "element": "water",
+  "flying": false,
+  "evolution": null,
+
+  "base_stats": {
+    "hp": 370,
+    "attack": 202,
+    "defense": 101,
+    "speed": 40
+  },
+
+  "moves": {
+    "learnset": [
+      { "level": 51,  "move": "leviathan_break" },
+      { "level": 59,  "move": "pressure_crush" },
+      { "level": 67, "move": "abyssal_coil" },
+      { "level": 80, "move": "oceans_edict"}
+    ],
+    "default": ["leviathan_break"]
+  }
+}

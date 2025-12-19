@@ -1,0 +1,14 @@
+{
+    "id": "burrow_bash",
+    "name": "Burrow Bash",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 1.2
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "id": "aqua_surge",
+    "name": "Aqua Surge",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "speed_up",
+            "method": "add",
+            "value": 10,
+            "duration": 1,
+            "target": "self"
+        },
+        {
+            "type": "special",
+            "id": "additional_energy",
+            "target": "self",
+            "value": 2
+        }
+    ]
+}

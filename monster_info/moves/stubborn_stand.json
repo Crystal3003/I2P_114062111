@@ -1,0 +1,16 @@
+{
+    "id": "stubborn_stand",
+    "name": "Stubborn Stand",
+    "ec": 1,
+    
+    "effects":[
+        {
+            "type": "apply_effect",
+            "id": "defense_up",
+            "target": "self",
+            "method": "multiply",
+            "value": 1.5,
+            "duration": 1
+        }
+    ]
+}

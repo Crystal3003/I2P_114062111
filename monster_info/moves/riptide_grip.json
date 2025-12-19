@@ -1,0 +1,20 @@
+{
+    "id": "riptide_grip",
+    "name": "Riptide Grip",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 0.8
+        },
+        {
+            "type": "heal",
+            "method": "lost_hp",
+            "value": 0.4,
+            "target": "self"
+        }
+    ]
+}

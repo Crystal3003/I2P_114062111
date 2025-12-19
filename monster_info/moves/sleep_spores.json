@@ -1,0 +1,14 @@
+{
+    "id": "sleep_spores",
+    "name": "Sleep Spores",
+    "ec": 5,
+    
+    "effects":[
+        {
+            "type": "apply_status",
+            "id": "sleep",
+            "duration": 1,
+            "target": "enemy"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "id": "tail_splash",
+    "name": "Tail Splash",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 0.5
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "water",
+            "power": 0.5
+        }
+    ]
+}

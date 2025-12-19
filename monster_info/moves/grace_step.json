@@ -1,0 +1,28 @@
+{
+    "id": "grace_step",
+    "name": "Grace Step",
+    "ec": 2,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "divine",
+            "power": 1.0
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "power": 0.75,
+            "element": "neutral",
+            "chance": 0.5
+        },
+        {
+            "type": "attack",
+            "target": "enemy",
+            "power": 0.75,
+            "element": "neutral",
+            "chance": 0.5
+        }
+    ]
+}

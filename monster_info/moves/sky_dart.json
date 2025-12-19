@@ -1,0 +1,14 @@
+{
+    "id": "sky_dart",
+    "name": "Sky Dart",
+    "ec": 10,
+    
+    "effects":[
+        {
+            "type": "attack",
+            "target": "enemy",
+            "element": "neutral",
+            "power": 2.0
+        }
+    ]
+}
