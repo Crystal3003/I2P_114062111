@@ -200,8 +200,8 @@ class Monster:
         delta_defense = 2 + random.randint(-1,1)
         self.defense += delta_defense
         path = f"monster_info/monsters/{self.id}.json"
-        Logger.info(f"{self.name} level up! {self.level - 1}->{self.level}")
-        Logger.info(f"\nATK: {self.attack - delta_attack} -> {self.attack}\
+        Logger.info(f"{self.name} level up! {self.level - 1}->{self.level}\
+                    \nATK: {self.attack - delta_attack} -> {self.attack}\
                     \nDEF: {self.defense - delta_defense} -> {self.defense}\
                     \nHP: {self.max_hp - delta_hp} -> {self.max_hp}")
         with open(path,"r",encoding="utf-8") as f:
