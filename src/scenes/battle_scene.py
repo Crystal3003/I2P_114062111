@@ -246,6 +246,8 @@ class BattleScene(Scene):
             if descision:
                 self.dm.add("You ran away from the battle")
                 self.battle_over = True
+            else:
+                self.change_page()
 
     @override 
     def draw(self, screen: pg.Surface) -> None: 

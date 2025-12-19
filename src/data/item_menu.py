@@ -53,6 +53,8 @@ class ItemMenu:
             visible_item: list[Item]
             self.current_info = None
             self.exit_button.update(dt)
+            if input_manager.key_pressed(pg.K_ESCAPE):
+                    self.close()
             if self.menu.page < self.menu.total_page:
                 self.next_page_button.update(dt)
             if 1 < self.menu.page:
