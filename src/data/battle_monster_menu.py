@@ -25,7 +25,7 @@ class BattleMonsterMenu(MonsterMenu):
                 self.btns.append(btn)
 
     def button_function(self, index: int):
-        self._selected_monster_index = index
+        self._selected_monster_index = index + (self.menu.page - 1) * 6
         self.close()
         self.locked = False
 
