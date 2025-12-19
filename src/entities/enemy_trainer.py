@@ -9,7 +9,7 @@ from src.sprites import Sprite
 from src.core import GameManager
 from src.core.services import input_manager, scene_manager
 from src.utils import GameSettings, Direction, Position, PositionCamera
-from src.utils.definition import Monster
+from src.utils.definition import Monster, Item
 
 class EnemyTrainerClassification(Enum):
     STATIONARY = "stationary"
@@ -37,7 +37,9 @@ class EnemyTrainer(Entity):
         classification: EnemyTrainerClassification = EnemyTrainerClassification.STATIONARY,
         max_tiles: int | None = 2,
         facing: Direction | None = None,
-        monsters: list[Monster] | None = []
+        monsters: list[Monster] | None = [],
+        can_be_challenged_again: bool | None = False,
+        rewards: list[Item] | None = []
     ) -> None:
         super().__init__(x, y, game_manager, anim_sprite_path)
         self.classification = classification
@@ -54,6 +56,10 @@ class EnemyTrainer(Entity):
         self.warning_sign.update_pos(Position(x + GameSettings.TILE_SIZE // 4, y - GameSettings.TILE_SIZE // 2))
         self.detected = False
 
+        self.can_be_challenged_again = can_be_challenged_again
+        self.rewards = rewards
+
+
     @override
     def update(self, dt: float) -> None:
         self._movement.update(self, dt)
@@ -66,7 +72,9 @@ class EnemyTrainer(Entity):
                                        game_manager=self.game_manager, 
                                        bg_path="backgrounds/background1.png", 
                                        battle_type='trainer',
-                                       enemy_monsters = self.monsters)
+                                       enemy_monsters = self.monsters,
+                                       can_be_challenged_again = self.can_be_challenged_again,
+                                       rewards = self.rewards)
     @override
     def draw(self, screen: pygame.Surface, camera: PositionCamera) -> None:
         super().draw(screen, camera)
@@ -132,6 +140,7 @@ class EnemyTrainer(Entity):
         anim = data.get("anim")
         max_tiles = data.get("max_tiles")
         facing_val = data.get("facing")
+        can_ba_challenged_again = data.get("can_ba_challenged_again", False)
         facing: Direction | None = None
         if facing_val is not None:
             if isinstance(facing_val, str):
@@ -143,6 +152,9 @@ class EnemyTrainer(Entity):
         monsters = []
         for m in data.get("monsters"):
             monsters.append(Monster(**m))
+        rewards = []
+        for r in data.get("rewards", []):
+            rewards.append(Item(**r))
         return cls(
             data["x"] * GameSettings.TILE_SIZE,
             data["y"] * GameSettings.TILE_SIZE,
@@ -151,7 +163,9 @@ class EnemyTrainer(Entity):
             classification,
             max_tiles,
             facing,
-            monsters
+            monsters,
+            can_ba_challenged_again,
+            rewards
         )
 
     @override
@@ -160,8 +174,12 @@ class EnemyTrainer(Entity):
         base["classification"] = self.classification.value
         base["facing"] = self.direction.name
         base["max_tiles"] = self.max_tiles
+        base["can_ba_challenged_again"] = self.can_be_challenged_again
         monsters = []
         for m in self.monsters:
             monsters.append(m.to_dict())
         base["monsters"] = monsters
+        rewards = []
+        for r in self.rewards:
+            rewards.append(r.to_dict())
         return base

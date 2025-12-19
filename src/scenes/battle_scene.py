@@ -7,7 +7,6 @@ from src.core.services import scene_manager, sound_manager, input_manager
 from src.core.managers import GameManager 
 from typing import override 
 from src.utils import GameSettings, Logger
-from src.entities.pokemon import Pokemon 
 from src.utils.definition import Monster, BattleMonster, Skill
 from src.interface.description_manager import DescriptionManager
 from src.utils.skill_executor import SkillExecutor
@@ -33,6 +32,7 @@ class BattleScene(Scene):
         self.switch_reason = None
         self.round_started = False
         self.can_capture = False
+        self.player_won = False
         self.game_manager = GameManager.load("saves/game0.json")
         self.current_page = "main"
         self.skill_executor = SkillExecutor()
@@ -68,13 +68,23 @@ class BattleScene(Scene):
         self.bag = self.game_manager.bag
         self.monster_menu = BattleMonsterMenu(self.game_manager.bag._monsters_data, self.player_current_monster)
         self.item_menu = BattleItemMenu(self.game_manager.bag._items_data)
-    def set_params(self, game_manager: GameManager, battle_type=None, bg_path="backgrounds/background1.png", enemy_monsters: list[Monster] | None = []): 
+        self.rewards = []
+    def set_params(self, 
+                   game_manager: GameManager, 
+                   battle_type=None, bg_path="backgrounds/background1.png", 
+                   enemy_monsters: list[Monster] | None = [],
+                   can_be_challenged_again=False,
+                   rewards: list[Item] | None = []): 
         self.bg_path = bg_path
         self.battle_type = battle_type 
         self.game_manager = game_manager
         self.player_monsters = [m for m in self.game_manager.bag._monsters_data]
+        self.rewards = rewards
         if battle_type == "trainer":
             self.opponent_monsters = enemy_monsters
+            if can_be_challenged_again:
+                for m in self.opponent_monsters:
+                    m.hp = m.max_hp
             self.opponent_current_monster = BattleMonster(self.opponent_monsters[0])
         elif battle_type == "bush":
             self.bush_monster = self.generate_bush_monster()
@@ -120,6 +130,7 @@ class BattleScene(Scene):
             self.dm.add(f"You captured {self.opponent_current_monster.base.name}!") 
             self.captured = True
             self.battle_over = True
+            self.player_won = True
         else:
             self.dm.add(f"You missed it!") 
 
@@ -131,6 +142,7 @@ class BattleScene(Scene):
         self.captured = False 
         self.player_current_monster = None
         self.can_capture = False
+        self.player_won = False
         self.player_energy = 0
         self.enemy_energy = 0
         self.emi = 0
@@ -460,6 +472,7 @@ class BattleScene(Scene):
                 self.dm.add("All defeated the opponent!")
                 self.dm.add("You won the battle!")
                 self.battle_over = True
+                self.player_won = True
                 return
             # bush monster try to escape
             elif self.battle_type == "bush" and self.can_capture:
@@ -510,4 +523,8 @@ class BattleScene(Scene):
             #battle is over
             if self.captured:
                 self.game_manager.bag._monsters_data.append(self.bush_monster)
+            if self.player_won:
+                for reward in self.rewards:
+                    self.game_manager.bag.change_item_amount(reward.id, "add", reward.count)
+                    Logger.info(f"Get {reward.count} {reward.name} from the battle")
             scene_manager.change_scene("game")

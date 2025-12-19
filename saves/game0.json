@@ -30,6 +30,13 @@
           "classification": "stationary",
           "facing": "DOWN",
           "max_tiles": 2,
+          "can_ba_challenged_again": true,
+          "rewards": [
+            {
+              "id": "coins",
+              "count": 50
+            }
+          ],
           "monsters": [
             {
               "id": "spriglet",
@@ -64,6 +71,8 @@
           "classification": "stationary",
           "facing": "UP",
           "max_tiles": 2,
+          "can_ba_challenged_again": false,
+          "rewards": [],
           "monsters": [
             {
               "id": "embit",
@@ -86,6 +95,8 @@
           "classification": "stationary",
           "facing": "UP",
           "max_tiles": 2,
+          "can_ba_challenged_again": false,
+          "rewards": [],
           "monsters": [
             {
               "id": "embit",
@@ -282,8 +293,8 @@
   ],
   "current_map": "map.tmx",
   "player": {
-    "x": 25.1875,
-    "y": 30.9375,
+    "x": 22.328125,
+    "y": 31.3125,
     "anim": "character/ow1.png"
   },
   "bag": {
@@ -302,14 +313,17 @@
       },
       {
         "id": "embit",
-        "hp": 105,
-        "max_hp": 105,
-        "defense": 100,
-        "attack": 124,
-        "level": 19,
-        "exp": 450,
+        "hp": 110,
+        "max_hp": 110,
+        "defense": 101,
+        "attack": 130,
+        "level": 20,
+        "exp": 40,
         "skill_set": [
-          "ember_claw", "heat_peck", "smolder_hide"
+          "ember_claw",
+          "heat_peck",
+          "smolder_hide",
+          "flame_pulse"
         ]
       },
       {

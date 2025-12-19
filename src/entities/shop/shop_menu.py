@@ -6,7 +6,6 @@ from src.utils import Logger, ItemSprite
 from src.sprites import Sprite
 from src.data.bag import Bag
 from src.utils.definition import Item, Monster
-from src.entities.pokemon import Pokemon
 import math
 
 class ShopMenu:
