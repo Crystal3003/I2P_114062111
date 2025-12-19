@@ -1,0 +1,21 @@
+{
+    "id": "strength_potion",
+    "name": "Strength Potion",
+    "sprite_path": "ingame_ui/potion.png",
+    "usable": true,
+    "effects": [
+        {
+            "type": "apply_effect",
+            "id": "attack_up",
+            "target": "self",
+            "duration": 2,
+            "method": "multiply",
+            "value": 1.5
+        }
+    ],
+    "tags": ["in_battle"],
+    "texts": [
+        "The essence of a warrior's blood.",
+        "Monster ATK x 1.5 after use."
+    ]
+}

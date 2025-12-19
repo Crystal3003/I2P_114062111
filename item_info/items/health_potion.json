@@ -1,0 +1,19 @@
+{
+    "id": "health_potion",
+    "name": "Health Potion",
+    "sprite_path": "ingame_ui/potion.png",
+    "usable": true,
+    "effects": [
+        {
+            "type": "heal",
+            "target": "self",
+            "method": "max_hp",
+            "value": 0.3
+        }
+    ],
+    "tags": ["in_battle", "in_bag"],
+    "texts": [
+        "The bottle of water from the spring.",
+        "Monster heal MAX HP x 0.3 after use."
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "id": "strengtdefense_potion",
+    "name": "Defense Potion",
+    "sprite_path": "ingame_ui/potion.png",
+    "usable": true,
+    "effects": [
+        {
+            "type": "apply_effect",
+            "id": "defense_up",
+            "target": "self",
+            "duration": 1,
+            "method": "multiply",
+            "value": 1.5
+        }
+    ],
+    "tags": ["in_battle"],
+    "texts": [
+        "Extracted from turtle shells.",
+        "Monster DEF x 1.5 after use."
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "id": "pokeball",
+    "name": "Pokeball",
+    "sprite_path": "ingame_ui/ball.png",
+    "usable": false,
+    "tags": [],
+    "texts": [
+        "If you want more monsters, you'll need this."
+    ]
+}

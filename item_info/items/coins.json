@@ -1,0 +1,11 @@
+{
+    "id": "coins",
+    "name": "Coins",
+    "sprite_path": "ingame_ui/coin.png",
+    "usable": false,
+    "tags": [],
+    "texts": [
+        "Made of pure gold.",
+        "Can use for trading."
+    ]
+}
