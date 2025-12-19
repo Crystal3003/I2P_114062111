@@ -135,7 +135,9 @@ class SkillExecutor:
         base_dmg = user.temp_stats["attack"] * power
         target = enemy if effect["target"] == "enemy" else user
         if self.element_counter(effect["element"], target.element):
-            base_dmg *= 1.25
+            base_dmg *= 1.50
+        elif self.element_counter(target.element, effect["element"]):
+            base_dmg *= 0.67
         final_dmg = round(base_dmg - target.temp_stats["defense"])
 
         accuracy = (user.temp_stats["speed"] - target.temp_stats["speed"] + 80) / 100
