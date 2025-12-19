@@ -100,7 +100,7 @@ class Skill:
 
 class Monster:
     def __init__(self, *,
-                 id, hp, max_hp, defense, attack, level, skill_set: list[str] | None = None):
+                 id, hp, max_hp, defense, attack, level, exp: int | None = 0, skill_set: list[str] | None = None):
         from src.sprites import Sprite
         path = f"monster_info/monsters/{id}.json"
         if not os.path.exists(path):
@@ -133,10 +133,10 @@ class Monster:
         self.level = level
 
         #exp
-        self.exp = 0
+        self.exp = exp
         self.pending_exp = 0
         self.level_up_exp = self.exp_to_next_level(self.level)
-        if skill_set is not None:
+        if skill_set is not None and skill_set != []:
             self.skill_set = [Skill(skill) for skill in skill_set]
         else:
             self.skill_set = [Skill(self.data.get("moves", {}).get("default"))]
@@ -274,6 +274,7 @@ class Monster:
             max_hp=base["hp"],
             attack=base["attack"],
             defense=base["defense"],
+            exp=0,
             level=1,
             skill_set=moves["default"]
         )
@@ -285,6 +286,7 @@ class Monster:
             "defense":self.defense,
             "attack":self.attack,
             "level":self.level,
+            "exp": self.exp,
             "skill_set": [skill.id for skill in self.skill_set]
         }
     def exp_to_next_level(self, level):
@@ -448,6 +450,7 @@ class Item:
         self.id = id
         self.name = data["name"]
         self.sprite_path = data["sprite_path"]
+        self.img = Sprite(self.sprite_path, (30, 30))
         self.tags = data.get("tags", [])
         self.usable = data.get("usable", False)
         self.effects = data.get("effects", [])

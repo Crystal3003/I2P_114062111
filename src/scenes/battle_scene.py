@@ -27,12 +27,12 @@ class BattleScene(Scene):
         self.battle_type = None
         self.battle_over = False
         self.bg_path = "backgrounds/background1.png"
-        self.done_option = False 
         self.enemy_moved = False
         self.captured = False
         self.added_energy = False
         self.switch_reason = None
         self.round_started = False
+        self.can_capture = False
         self.game_manager = GameManager.load("saves/game0.json")
         self.current_page = "main"
         self.skill_executor = SkillExecutor()
@@ -111,22 +111,29 @@ class BattleScene(Scene):
         bush_monster.grow_to_level(lvl)
         return bush_monster
     
-    def capture(self):
-        self.dm.add("You captured a new pokemon!")
-        self.done_option = True 
-        self.captured = True
-        self.battle_over = True
+    def try_capture(self):
+        import random
+        spd = self.opponent_current_monster.temp_stats["speed"]
+        chance = 1.0 - spd / 100
+        r = random.random()
+        if r < chance:
+            self.dm.add(f"You captured {self.opponent_current_monster.base.name}!") 
+            self.captured = True
+            self.battle_over = True
+        else:
+            self.dm.add(f"You missed it!") 
 
     @override 
     def enter(self) -> None:
         self.player_turn = True 
         self.battle_over = False
-        self.done_option = False 
         self.enemy_moved = False
         self.captured = False 
         self.player_current_monster = None
+        self.can_capture = False
         self.player_energy = 0
         self.enemy_energy = 0
+        self.emi = 0
         self.change_page("switch")
         self.switch_reason = "initialize"
         sound_manager.play_bgm("RBY 101 Opening (Part 1).ogg") 
@@ -151,7 +158,7 @@ class BattleScene(Scene):
                 self.bag_button.update(dt)
                 self.switch_button.update(dt)
                 self.escape_button.update(dt)
-                if self.battle_type == 'bush' and self.bush_monster.hp == 0:
+                if self.can_capture:
                     self.capture_button.update(dt)
                 else:
                     self.act_button.update(dt)
@@ -199,6 +206,13 @@ class BattleScene(Scene):
 
         if self.player_current_monster:
             self.player_current_monster.update(dt)
+
+        if self.battle_type == "bush" and (self.opponent_current_monster.hp <= round(self.opponent_current_monster.base.max_hp * 0.15) or
+                                          self.opponent_current_monster.hp == 1):
+            if self.opponent_current_monster.hp <= 0:
+                self.opponent_current_monster.hp = 1
+            self.can_capture = True
+
         self.opponent_current_monster.update(dt)
     def generate_buttons(self, page: str):
         self.page_btns.clear()
@@ -221,11 +235,15 @@ class BattleScene(Scene):
         elif page == "switch":
             pass
         elif page == "escape":
-            run_btn = TextedButton("Run", 18, w/2, h, 6, lambda e = True: self.button_function("escape", e))
-            stay_btn = TextedButton("Stay", 18, w, h, 6, lambda e = False: self.button_function("escape", e))
+            run_btn = TextedButton("Run", 18, sw/2 * 0.3, h, 6, lambda e = True: self.button_function("escape", e))
+            stay_btn = TextedButton("Stay", 18, sw/2 * 1.2, h, 6, lambda e = False: self.button_function("escape", e))
             self.page_btns.extend([run_btn, stay_btn])
+
         elif page == "capture":
-            pass
+            capture_btn = TextedButton("Try", 18, sw/2 * 0.3, h, 6, lambda e = True: self.button_function("capture", e))
+            give_up_btn = TextedButton("Give Up", 18, sw/2 * 1.2, h, 6, lambda e = False: self.button_function("capture", e))
+            self.page_btns.extend([capture_btn, give_up_btn])
+
     def button_function(self, move, descision):
         if move == "act":
             descision: Skill
@@ -248,6 +266,25 @@ class BattleScene(Scene):
                 self.battle_over = True
             else:
                 self.change_page()
+        elif move == "capture":
+            descision: bool
+            if descision:
+                ball_count = self.game_manager.bag.get_item_count("pokeball")
+                if ball_count <= 0:
+                    self.dm.add("You don't have any Pokeball!")
+                    self.change_page()
+                else:
+                    self.game_manager.bag.change_item_amount("pokeball", "add", -1)
+                    self.try_capture()
+                    self.change_page()
+                    event = {
+                        "type": "capture"
+                    }
+                    self.event_queue.append(event)
+            else:
+                self.dm.add("You gave up trying.")
+                self.dm.add(f"{self.opponent_current_monster.base.name} escaped.")
+                self.battle_over = True
 
     @override 
     def draw(self, screen: pg.Surface) -> None: 
@@ -390,13 +427,20 @@ class BattleScene(Scene):
                     self.bag_button.draw(screen)
                     self.switch_button.draw(screen)
                     self.escape_button.draw(screen)
-                    if self.battle_type == 'bush' and self.bush_monster.hp == 0:
+                    if self.can_capture:
                         self.capture_button.draw(screen)
                     else:
                         self.act_button.draw(screen)
                 else:
                     for b in self.page_btns:
                         b.draw(screen)
+                    if self.current_page == "capture":
+                        ball_count = self.game_manager.bag.get_item_count("pokeball")
+                        count_text = pg.font.Font("assets/fonts/minecraft.ttf", 18).render(f"x {ball_count}", 1, (255, 255, 255,))
+                        ball_item = Item.from_id("pokeball")
+                        ball_img = ball_item.img.image
+                        screen.blit(ball_img, (400, 660))
+                        screen.blit(count_text, (440, 670))
        
         elif not self.player_turn and not self.battle_over: 
             # This is start of enemy's turn
@@ -406,7 +450,8 @@ class BattleScene(Scene):
                 self.opponent_current_monster.tick_status()
                 self.round_started = True
             # check if need to switch or already lost
-            if self.opponent_current_monster.hp <= 0:
+            # enemy trainer try to switch
+            if self.battle_type == "trainer" and self.opponent_current_monster.hp <= 0 :
                 for m in self.opponent_monsters:
                     if m.hp > 0:
                         self.opponent_current_monster = BattleMonster(m)
@@ -415,6 +460,25 @@ class BattleScene(Scene):
                 self.dm.add("All defeated the opponent!")
                 self.dm.add("You won the battle!")
                 self.battle_over = True
+                return
+            # bush monster try to escape
+            elif self.battle_type == "bush" and self.can_capture:
+                #try to escape
+                self.dm.add(f"{self.opponent_current_monster.base.name} tried to escape!")
+                import random
+                # emi now not reset, use for chance count
+                chance = self.opponent_current_monster.base.speed / 100 * self.emi
+                r = random.random()
+                if r < chance:
+                    self.dm.add("And it ran away.")
+                    self.battle_over = True
+                else:
+                    self.dm.add("But it failed.")
+                    self.emi += 1
+                    self.player_turn = True 
+                    self.enemy_moved = False
+                    self.added_energy = False 
+                    self.round_started = False
                 return
             # Gain energy
             if not self.added_energy and self.emi == 0:

@@ -38,6 +38,7 @@
               "defense": 1,
               "attack": 3,
               "level": 1,
+              "exp": 0,
               "skill_set": [
                 "root_tackle"
               ]
@@ -49,6 +50,7 @@
               "defense": 0,
               "attack": 2,
               "level": 1,
+              "exp": 0,
               "skill_set": [
                 "water_flick"
               ]
@@ -70,6 +72,7 @@
               "defense": 2,
               "attack": 5,
               "level": 1,
+              "exp": 0,
               "skill_set": [
                 "ember_claw"
               ]
@@ -91,6 +94,7 @@
               "defense": 2,
               "attack": 5,
               "level": 1,
+              "exp": 0,
               "skill_set": [
                 "ember_claw",
                 "heat_peck",
@@ -118,6 +122,7 @@
                   "attack": 3,
                   "defense": 2,
                   "level": 1,
+                  "exp": 25,
                   "skill_set": [
                     "root_tackle"
                   ]
@@ -277,7 +282,7 @@
   ],
   "current_map": "map.tmx",
   "player": {
-    "x": 23.359375,
+    "x": 25.1875,
     "y": 30.9375,
     "anim": "character/ow1.png"
   },
@@ -290,19 +295,33 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
+        "exp": 0,
         "skill_set": [
           "root_tackle"
         ]
       },
       {
         "id": "embit",
-        "hp": 10,
-        "max_hp": 10,
-        "defense": 2,
-        "attack": 5,
-        "level": 1,
+        "hp": 105,
+        "max_hp": 105,
+        "defense": 100,
+        "attack": 124,
+        "level": 19,
+        "exp": 450,
         "skill_set": [
-          "ember_claw"
+          "ember_claw", "heat_peck", "smolder_hide"
+        ]
+      },
+      {
+        "id": "dripfin",
+        "hp": 100,
+        "max_hp": 100,
+        "defense": 100,
+        "attack": 100,
+        "level": 18,
+        "exp": 380,
+        "skill_set": [
+          "water_flick"
         ]
       },
       {
@@ -312,18 +331,7 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "skill_set": [
-          "root_tackle",
-          "tunnel_escape"
-        ]
-      },
-      {
-        "id": "spriglet",
-        "hp": 0,
-        "max_hp": 15,
-        "defense": 1,
-        "attack": 3,
-        "level": 1,
+        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -336,6 +344,7 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
+        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -348,6 +357,7 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
+        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -360,6 +370,7 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
+        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
