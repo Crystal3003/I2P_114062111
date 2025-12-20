@@ -258,6 +258,7 @@ class GameScene(Scene):
             self.game_manager.current_map.draw(screen, camera)
             self.navigator.draw_path(screen, camera)
             self.game_manager.player.draw(screen, camera)
+            self.game_manager.current_map.draw_overlay(screen, camera)
         else:
             camera = PositionCamera(0, 0)
             self.game_manager.current_map.draw(screen, camera)

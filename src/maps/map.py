@@ -25,6 +25,8 @@ class Map:
         # Prebake the map
         self._surface = pg.Surface((pixel_w, pixel_h), pg.SRCALPHA)
         self._render_all_layers(self._surface)
+        self._overlay_surface = pg.Surface((pixel_w, pixel_h), pg.SRCALPHA)
+        self._render_overlay_layers(self._overlay_surface)
         # Prebake the collision map
         self._collision_map = self._create_collision_map()
         self._bush_map = self._create_bush_map()
@@ -41,7 +43,13 @@ class Map:
                 pg.draw.rect(screen, (255, 0, 0), camera.transform_rect(rect), 1)
             for rect in self._bush_map:
                 pg.draw.rect(screen, (255, 255, 0), camera.transform_rect(rect), 1)
-        
+    def draw_overlay(self, screen: pg.Surface, camera: PositionCamera):
+        screen.blit(self._overlay_surface, camera.transform_position(Position(0, 0)))
+        if GameSettings.DRAW_HITBOXES:
+            for rect in self._collision_map:
+                pg.draw.rect(screen, (255, 0, 0), camera.transform_rect(rect), 1)
+            for rect in self._bush_map:
+                pg.draw.rect(screen, (255, 255, 0), camera.transform_rect(rect), 1)
     def check_collision(self, rect: pg.Rect) -> bool:
         '''
         [TODO HACKATHON 4]
@@ -84,11 +92,15 @@ class Map:
 
             image = pg.transform.scale(image, (GameSettings.TILE_SIZE, GameSettings.TILE_SIZE))
             target.blit(image, (x * GameSettings.TILE_SIZE, y * GameSettings.TILE_SIZE))
-    
+    def _render_overlay_layers(self, target: pg.Surface):
+        for layer in self.tmxdata.visible_layers:
+            if isinstance(layer, pytmx.TiledTileLayer) and "overlay" in layer.name.lower():
+                self._render_tile_layer(target, layer)
+
     def _create_collision_map(self) -> list[pg.Rect]:
         rects = []
         for layer in self.tmxdata.visible_layers:
-            if isinstance(layer, pytmx.TiledTileLayer) and ("collision" in layer.name.lower() or "house" in layer.name.lower()):
+            if isinstance(layer, pytmx.TiledTileLayer) and ("collision" in layer.name.lower()):
                 for x, y, gid in layer:
                     if gid != 0:
                         '''
