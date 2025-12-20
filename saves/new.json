@@ -16,6 +16,27 @@
           "destination": "hospital.tmx",
           "dest_x": 15.0,
           "dest_y": 18.0
+        },
+        {
+          "x": 76,
+          "y": 23,
+          "destination": "bridge.tmx",
+          "dest_x":0,
+          "dest_y":8
+        },
+        {
+          "x": 76,
+          "y": 24,
+          "destination": "bridge.tmx",
+          "dest_x":0,
+          "dest_y":9
+        },
+        {
+          "x": 76,
+          "y": 25,
+          "destination": "bridge.tmx",
+          "dest_x":0,
+          "dest_y":10
         }
       ],
       "player": {

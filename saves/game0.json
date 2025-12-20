@@ -16,6 +16,27 @@
           "destination": "hospital.tmx",
           "dest_x": 15.0,
           "dest_y": 18.0
+        },
+        {
+          "x": 76,
+          "y": 23,
+          "destination": "bridge.tmx",
+          "dest_x":11,
+          "dest_y":9
+        },
+        {
+          "x": 76,
+          "y": 24,
+          "destination": "bridge.tmx",
+          "dest_x":11,
+          "dest_y":10
+        },
+        {
+          "x": 76,
+          "y": 25,
+          "destination": "bridge.tmx",
+          "dest_x":11,
+          "dest_y":11
         }
       ],
       "player": {
@@ -30,13 +51,6 @@
           "classification": "stationary",
           "facing": "DOWN",
           "max_tiles": 2,
-          "can_ba_challenged_again": true,
-          "rewards": [
-            {
-              "id": "coins",
-              "count": 50
-            }
-          ],
           "monsters": [
             {
               "id": "spriglet",
@@ -45,7 +59,6 @@
               "defense": 1,
               "attack": 3,
               "level": 1,
-              "exp": 0,
               "skill_set": [
                 "root_tackle"
               ]
@@ -57,7 +70,6 @@
               "defense": 0,
               "attack": 2,
               "level": 1,
-              "exp": 0,
               "skill_set": [
                 "water_flick"
               ]
@@ -71,8 +83,6 @@
           "classification": "stationary",
           "facing": "UP",
           "max_tiles": 2,
-          "can_ba_challenged_again": false,
-          "rewards": [],
           "monsters": [
             {
               "id": "embit",
@@ -81,7 +91,6 @@
               "defense": 2,
               "attack": 5,
               "level": 1,
-              "exp": 0,
               "skill_set": [
                 "ember_claw"
               ]
@@ -95,8 +104,6 @@
           "classification": "stationary",
           "facing": "UP",
           "max_tiles": 2,
-          "can_ba_challenged_again": false,
-          "rewards": [],
           "monsters": [
             {
               "id": "embit",
@@ -105,7 +112,6 @@
               "defense": 2,
               "attack": 5,
               "level": 1,
-              "exp": 0,
               "skill_set": [
                 "ember_claw",
                 "heat_peck",
@@ -133,7 +139,6 @@
                   "attack": 3,
                   "defense": 2,
                   "level": 1,
-                  "exp": 25,
                   "skill_set": [
                     "root_tackle"
                   ]
@@ -142,14 +147,14 @@
               },
               {
                 "item": {
-                  "id": "strength_potion",
+                  "id":"strength_potion",
                   "count": 1
                 },
                 "price": 50
               },
               {
                 "item": {
-                  "id": "defense_potion",
+                  "id":"defense_potion",
                   "count": 1
                 },
                 "price": 40
@@ -217,22 +222,22 @@
           "x": 11.0,
           "y": 14.0,
           "destination": "map.tmx",
-          "dest_x": 24.0,
-          "dest_y": 24.0
+          "dest_x": 74.0,
+          "dest_y": 23.0
         },
         {
           "x": 12.0,
           "y": 14.0,
           "destination": "map.tmx",
-          "dest_x": 24.0,
+          "dest_x": 74.0,
           "dest_y": 24.0
         },
         {
           "x": 13.0,
           "y": 14.0,
           "destination": "map.tmx",
-          "dest_x": 24.0,
-          "dest_y": 24.0
+          "dest_x": 74.0,
+          "dest_y": 25.0
         }
       ],
       "player": {
@@ -275,8 +280,22 @@
           "dest_y": 29.0
         },
         {
-          "x": 17.0,
-          "y": 19.0,
+          "x": 9.0,
+          "y": 9.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        },
+        {
+          "x": 9.0,
+          "y": 10.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        },
+        {
+          "x": 9.0,
+          "y": 11.0,
           "destination": "map.tmx",
           "dest_x": 46.5,
           "dest_y": 29.0
@@ -289,12 +308,31 @@
       "enemy_trainers": [],
       "shops": [],
       "navigate_points": []
+    },
+    {
+      "path": "bridge.tmx",
+      "teleport": [
+        {
+          "x": 17.0,
+          "y": 19.0,
+          "destination": "map.tmx",
+          "dest_x": 46.5,
+          "dest_y": 29.0
+        }
+      ],
+      "player": {
+        "x": 0,
+        "y": 9
+      },
+      "enemy_trainers": [],
+      "shops": [],
+      "navigate_points": []
     }
   ],
   "current_map": "map.tmx",
   "player": {
-    "x": 22.328125,
-    "y": 31.3125,
+    "x": 27.640625,
+    "y": 24.015625,
     "anim": "character/ow1.png"
   },
   "bag": {
@@ -306,36 +344,19 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "exp": 0,
         "skill_set": [
           "root_tackle"
         ]
       },
       {
         "id": "embit",
-        "hp": 110,
-        "max_hp": 110,
-        "defense": 101,
-        "attack": 130,
-        "level": 20,
-        "exp": 40,
+        "hp": 10,
+        "max_hp": 10,
+        "defense": 2,
+        "attack": 5,
+        "level": 1,
         "skill_set": [
-          "ember_claw",
-          "heat_peck",
-          "smolder_hide",
-          "flame_pulse"
-        ]
-      },
-      {
-        "id": "dripfin",
-        "hp": 100,
-        "max_hp": 100,
-        "defense": 100,
-        "attack": 100,
-        "level": 18,
-        "exp": 380,
-        "skill_set": [
-          "water_flick"
+          "ember_claw"
         ]
       },
       {
@@ -345,7 +366,18 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "exp": 0,
+        "skill_set": [
+          "root_tackle",
+          "tunnel_escape"
+        ]
+      },
+      {
+        "id": "spriglet",
+        "hp": 0,
+        "max_hp": 15,
+        "defense": 1,
+        "attack": 3,
+        "level": 1,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -358,7 +390,6 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -371,7 +402,6 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
@@ -384,7 +414,6 @@
         "defense": 1,
         "attack": 3,
         "level": 1,
-        "exp": 0,
         "skill_set": [
           "root_tackle",
           "tunnel_escape"
